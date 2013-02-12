@@ -16,6 +16,8 @@
 
 package de.roderick.weberknecht;
 
+import java.io.IOException;
+
 
 public interface WebSocketEventHandler
 {
@@ -23,6 +25,9 @@ public interface WebSocketEventHandler
 	
 	
 	public void onMessage(WebSocketMessage message);
+	
+	
+	public void onError(IOException exception);
 	
 	
 	public void onClose();
