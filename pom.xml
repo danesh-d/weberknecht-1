@@ -9,35 +9,31 @@
   <packaging>jar</packaging>
   <name>peloton - Weberknecht</name>
   
+   <distributionManagement>
+      <repository>
+        <id>releases</id>
+        <url>http://192.168.1.119:8081/nexus/content/repositories/releases</url>
+    </repository>
+
+    <snapshotRepository>
+        <id>snapshots</id>
+        <url>http://192.168.1.119:8081/nexus/content/repositories/snapshots</url>
+      </snapshotRepository>
+  </distributionManagement>
+  
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.googlecode.addjars-maven-plugin</groupId>
-        <artifactId>addjars-maven-plugin</artifactId>
-        <version>1.0.5</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>add-jars</goal>
-            </goals>
+      <sourceDirectory>src</sourceDirectory>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.0</version>
             <configuration>
-              <resources>
-                <resource>
-                  <directory>${basedir}/libs</directory>
-                </resource>
-              </resources>
+              <source>1.6</source>
+              <target>1.6</target>
+              <encoding>UTF-8</encoding>
             </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+          </plugin>
+        </plugins>
+    </build>
 </project>
