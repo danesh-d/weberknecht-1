@@ -5,7 +5,7 @@ Weberknecht is a Java implementation of the client side of the WebSocket Protoco
 
 Requirements
 ------------
- * Apache Commons Codec 1.6
+ * Apache Commons Codec 1.6 (Not needed any more)
 
 Usage
 -----
