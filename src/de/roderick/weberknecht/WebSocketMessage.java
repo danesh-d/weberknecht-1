@@ -30,14 +30,22 @@ public class WebSocketMessage
 	}
 
 
-	public String getText()
+	// Added by Danesh Daroui (daneshd@opera.com)
+	public byte[] getBytes()
 	{
 		byte[] message = new byte[this.message.length];
 		for (int i = 0; i < this.message.length; i++) {
 			message[i] = this.message[i];
 		}
+
+		return message;
+	}
+
+
+	public String getText()
+	{
 		try {
-			return new String(message, "UTF-8");
+			return new String(getBytes(), "UTF-8");
 		}
 		catch (UnsupportedEncodingException uee) {
 			return null;
